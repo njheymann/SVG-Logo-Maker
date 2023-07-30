@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const Shape = require("./lib/shapes");
 
-
+// Function to create a file when generateSVG prompts are finished.
 const createSVGFile = (svgContent) => {
   fs.writeFile("logo.svg", svgContent, (err) => {
     if (err) throw err;
@@ -10,6 +10,7 @@ const createSVGFile = (svgContent) => {
   });
 };
 
+// Function to create a string based on user inputs
 const generateSVG = (initials, textColor, logoShape, shapeColor) => {
   let shape;
   switch (logoShape) {
@@ -26,12 +27,12 @@ const generateSVG = (initials, textColor, logoShape, shapeColor) => {
 
   shape.shapeColour(shapeColor);
   const renderedShape = shape.render();
-  const text = `<text x="50%" y="50%" text-anchor="middle" fill="${textColor}" font-size="50">${initials}</text>`;
+  const text = `<text x="50%" y="60%" text-anchor="middle" fill="${textColor}" font-size="30">${initials}</text>`;
 
   return `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">${renderedShape}${text}</svg>`;
 };
-
-const main = async () => {
+// Inquirer questions
+const runInquirer = async () => {
   const userInput = await inquirer.prompt([
     {
       type: "input",
@@ -62,4 +63,4 @@ const main = async () => {
   createSVGFile(svgContent);
 };
 
-main();
+runInquirer();
