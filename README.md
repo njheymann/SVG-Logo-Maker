@@ -43,5 +43,6 @@ Use `npm run test` to run tests
 
 ## Links
 
-Tutorial video: https://drive.google.com/file/d/1qgRlWliZb-t2mTTFSPKINRxhlb7oFd7W/view
+Tutorial video: https://drive.google.com/file/d/1qgRlWliZb-t2mTTFSPKINRxhlb7oFd7W/view  
+
 Repository url: https://github.com/njheymann/SVG-Logo-Maker
